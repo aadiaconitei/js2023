@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Incarcarea fisierelor javascript : default sync, async, defer</h1>
+    <p>dacă specificați ambele aspecte, <b>async</b> are prioritate pe browserele moderne, 
+        în timp ce browserele mai vechi care acceptă <b>defer</b>, dar nu <b>async</b>, va tine cont de <b>defer</b>.</p>
+
+    <a href="https://caniuse.com/#feat=script-async">Async</a>
+    <a href="https://caniuse.com/#feat=script-defer">Defer</a>
+
+    <a href="https://flaviocopes.com/javascript-async-defer/"> Documentatie</a>
+    <script>
+        myCar();
+        myTest();
+    </script>
+
+
+<script type="text/javascript" src="global.js" defer></script>
+    <script type="text/javascript" src="local.js" ></script>
+</body>
+</html>

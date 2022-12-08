@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. Este corect urmatorul code?
+    <code><pre>
+        'use strict';
+        var foo = "foo1";
+        var foo = "foo2"; 
+        
+        let bar = "bar1"; 
+        let bar = "bar2";
+    </pre></code>
+    
+    2. Ce afiseaza in consola urmatorul code?
+    <code><pre>
+        var foo = "Foo";  
+        let bar = "Bar"; 
+        
+        console.log(window.foo);
+        console.log(window.bar); 
+    </pre></code>
+    3. Ce afiseaza in consola urmatorul code?
+    <code><pre>
+        for (var j = 0; j < 3; j++) {
+            console.log("Valoarea este: " + j);
+        }
+        console.log("Ultima valoare este: " + j);
+        for (let i = 0; i < 3; i++) {
+            console.log("Valoarea este: " + i);
+        }
+        console.log("Ultima valoare este: " + i);
+    </pre></code>
+    4. Ce afiseaza in consola urmatorul code?
+    <code><pre>
+        const person = {
+            name: 'Ionescu'
+        }
+        
+        person.name = 'Popescu' ;
+        console.log("Numele este : " + person.name);
+        person = {}
+    </pre></code>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>  
+<body> 
+<h3>Variabile javascript</h3> <hr/>  
+<script type="text/javascript">
+var prenume;  
+prenume="Adrian";  
+document.write("<b>Numele meu este</b>: prenume");  
+document.write("<br/>");  
+document.write("<b>Numele meu este</b>: "+ prenume);  
+document.write("<br/>");  
+prenume="Costel";  
+document.write("<b>Noul meu nume este</b>: "+ prenume);  
+</script> 
+<hr/> <hr/> 
+<p>Daca redeclarati o variabila, ea va pastra ultima valoare atribuita:</p>
+<script type="text/javascript">
+var x=8; 
+var x=7; 
+var x; //aici nu va lua valoarea null;
+document.write("<b>Valoarea lui x este</b>: "+ x); 
+</script> 
+</body>  
+</html>
