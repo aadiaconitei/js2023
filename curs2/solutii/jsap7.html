@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Instructiunea for </title>
+		<meta charset="utf-8">
+	</head> 
+	<body>  
+		<h3>Sa se afiseze minimul si maximul din n numere citite de la tastatura</h3>  
+		<script language="JavaScript">
+			n=eval(prompt("Dati numarul n="));
+			x=eval(prompt("Dati primul numarul "));
+			min=x;
+			max=x;
+			v = new Array;
+			v[0]=x;
+			for (i=2; i<=n; i++)
+			{
+				x=eval(prompt("Dati urmatorul numarul ",i));
+				if (x<min)
+					min=x;
+				if (x>max)
+				max=x;
+				v[i-1]=x;
+			}
+			document.write('<pre>');
+			document.writeln('Elementele introduse: ',v.toString());
+			document.writeln("Elementul minim=",min);
+			document.writeln("Elementul maxim=",max);
+		</script>
+	</body>  
+</html>

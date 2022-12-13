@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        Dacă cuvântul cheie <b>var</b> este utilizat în cadrul unei funcții sau
+         al unui alt domeniu non-global, 
+        atunci acea variabilă nu este globală.  <br>
+        Dacă cuvântul cheie <b>var</b> nu este utilizat înainte de un nume de
+         variabilă, atunci acea variabilă este globală. <br>
+        <b>var</b>  este obligatoriu dacă nu se inițializează variabila <br>
+        Nu se recomanda declararea variabilelor fără <b>var</b>
+    </p>
+    <script>
+        var sum;
+        function foo() {
+            var x;
+            var y;
+
+            x = 5;
+            x ='aaa';
+            y = 6;
+            sum = x + y;
+            return sum;
+        }
+
+        sum = foo();
+        console.log('Suma easte:', sum);
+    </script>
+</body>
+
+</html>

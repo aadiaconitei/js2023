@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p = 5;
+        let string2 = "";
+        for (let i = 1; i <= p; i++) {
+            for (let j = 0; j <= p; j++) {
+                string2 += "*";
+            }
+            // string += "\n ";
+            string2 += "<br>";
+        }
+        // console.log(string);
+        document.write(string2);
+
+        let n = 5;
+        let string = "";
+        for (let i = 1; i <= n; i++) {
+            for (let j = 0; j < i; j++) {
+                string += "*";
+            }
+            // string += "\n ";
+            string += "<br>";
+        }
+        // console.log(string);
+        document.write(string);
+
+
+        let m = 5;
+        let string1 = "";
+        // External loop
+        for (let i = 1; i <= m; i++) {
+            // printing spaces
+            for (let j = 1; j <= m - i; j++) {
+                string1 += "&nbsp;&nbsp;";
+            }
+            // printing star
+            for (let k = 0; k < 2 * i - 1; k++) {
+                string1 += "*";
+            }
+              //string1 += "\n";
+            string1 += "<br>";
+        }
+        //console.log(string1);
+        document.write(string1);
+    </script>
+
+
+</body>
+
+</html>
