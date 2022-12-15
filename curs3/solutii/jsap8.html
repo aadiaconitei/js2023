@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Finctie impura</h1>
+    <script>
+        var x = 10;
+        function suma(y) {
+            return x + y;
+        }
+        console.log(suma(15));
+
+        let obj = { a: 0 }
+        const impure = (input) => {
+            // Modificam input.a
+            input.a = input.a + 1;
+            return input.a;
+        }
+        let b = impure(obj)
+        console.log(obj) // Logs { "a": 1 }
+        console.log(b) // Logs 1
+    </script>
+
+
+    <h1>Functie pure</h1>
+    <script>
+
+        function suma(x, y) {
+            return x + y;
+        }
+        console.log(suma(10, 15));
+
+        let obj2 = { a: 0 }
+        const pure = (input) => {
+            // Definim local un alt obiect
+            let output = input.a + 1;
+            return output;
+        }
+        let b2 = pure(obj2)
+        console.log(obj2) // Logs { "a": 0 }
+        console.log(b2) // Logs 1
+    </script>
+</body>
+
+</html>

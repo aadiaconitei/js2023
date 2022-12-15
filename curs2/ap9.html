@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let n = eval(prompt('Dati numarul de numere', 10));
+        let primul_nr = eval(prompt('Primul numar introdus este', 1));
+        let min = primul_nr;
+        let max = primul_nr;
+        for(let i=1; i<=n; i++){
+            let numar = eval(prompt('Urmatorul numar introdus este', 1));
+            console.log('Numar introdus',numar);
+            if( numar <= min){
+                min = numar;
+            }
+            if(numar >max){
+                max = numar;
+            }
+        }
+        console.log('Minimul este', min);
+        console.log('Maximul este', max);
+
+    </script>
+</body>
+</html>

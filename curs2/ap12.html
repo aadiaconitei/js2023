@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .glob{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let n = 8;
+        for( let i = 1; i<=n;i++){
+            for( let j = 1; j <=i; j++){
+                if(j %2 ==0){
+                    document.write('<span class="glob"> * </span>');
+                }
+                else{
+                    document.write('<span> * </span>');
+                }
+                
+            }
+            document.write('<br>');
+          
+
+        }
+
+    </script>
+</body>
+</html>

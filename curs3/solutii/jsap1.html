@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const car={
+            "marca":"Dacia",
+            "model":"Logan",
+            "an":2020,
+            "culoare":"alb",
+            "nrPasageri":5,
+            "decapotabil":false,
+            "km":65000
+        }
+        const car2={
+            "marca":"Dacia",
+            "model":"Logan",
+            "an":2020,
+            "culoare":"alb",
+            "nrPasageri":5,
+            "decapotabil":false,
+            "km":65000
+        }
+
+        console.log(typeof car);
+        console.log(car);
+console.log(car == car2); 
+// false , pentru ca sunt obiecte diferite 
+//stocate in zone de memorie diferite
+
+        console.log(`Eu am o masina ${car.marca} model ${car.model}`)
+
+        const myCar = "BMW";
+        // myCar = 'Opel'; // Error
+        car.marca = 'Volvo';
+        car.model = 'XC 40';
+        
+        console.table(car);
+        car.electric = true; //ok
+        //car = {'suv': true}; //Error este declarat const si nu poate fi redeclarat
+        console.table(car);
+
+    </script>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const -->
+</body>
+</html>

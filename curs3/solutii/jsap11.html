@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myImage {
+            background-image: url(./img/bec_inschis.png);
+            background-size: contain;
+            width: 100%;
+            max-width: 300px;
+            height: 206px;
+
+        }
+        .mystyle{
+            background-image: url(./img/bec_deschis.png);
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:focus+.slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked+.slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="myImage" id="myImage">
+
+    </div>
+    <div>
+        <label class="switch">
+            <input id="checkbox" type="checkbox" onclick="intrerupator()">
+            <span class="slider"></span>
+        </label>
+    </div>
+    <script>
+        function intrerupator() {
+            let verificare = confirm('Sigur doriti sa folositi intrerupatorul?');
+            if(verificare ==true){
+                let element = document.getElementById("myImage");
+                element.classList.toggle("mystyle");
+            }
+            else{
+                document.getElementById("checkbox").checked = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

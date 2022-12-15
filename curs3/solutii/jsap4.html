@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Exemplificare functie cu parametri - tabla inmultirii</title>
+	<meta charset="utf-8">
+
+</head>
+
+<body>
+	<h2 color="#990033"><b>Tabla inmultirii</b></h2>
+	<script>
+
+		function inmultire(x, y) {
+			rez = x * y
+			return rez
+		}
+
+		document.write('<table>');
+		for (i = 1; i <= 10; i++) {
+			if (i % 6 == 0 || i == 0) {
+				document.write('<tr>');
+			}
+			document.write('<td style="padding:15px">Tabla inmultirii cu ' + i + ' <br />');
+			for (j = 1; j <= 10; j++) {
+				document.write(parseInt(i) + " x " + parseInt(j) + " = " + parseInt(inmultire(i, j)))
+				document.write('<br>');
+			}
+			document.write('</td>');
+			if (i % 10 == 0 || i == 0) {
+				document.write('</tr>');
+			}
+		}
+		document.write('</table>');
+	</script>
+</body>
+
+</html>

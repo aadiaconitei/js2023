@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>functii anonime</title>
+</head>
+
+<body>
+	<script>
+		var myFunction = function () {
+			alert('Sunt o functie fara nume');
+		}
+		myFunction();
+
+		var myFunction2 = function namedFunction() {
+
+			alert('Si eu sunt o functie fara nume,dar cand apare o eroare se va afisa numele meu');
+		}
+		myFunction2();
+
+
+		(function () {
+			alert('Si eu sunt o functie anonima , dar nu pot fi reutilizata. Sunt executata o singura data');
+		})();
+
+		(function (message) {
+			alert(message);
+		}("Si eu sunt o functie anonima cu parametru "));
+
+		const mesaj = (message) => {
+			alert(`Eu sunt o functie Lambda ${message}`)
+		}
+		mesaj('Salur!');
+	</script>
+</body>
+
+</html>

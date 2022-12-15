@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Moduri de a defini o functie in javascript</h1>
+    <p>Functii clasice fara return</p>
+    <script>
+        function sumaNr(a, b) {
+            console.log(a + b);
+        }
+        sumaNr(2, 3);
+    </script>
+    <p>Functii clasice cu returne</p>
+    <p>Functii anonime</p>
+    <script>
+        let suma = function (a, b) { return a + b };
+        console.log(suma);
+    </script>
+    <p>Functii Lambda</p>
+    <p>Functii Arraw =></p>
+    <script>
+        
+        var anon = (a, b) => a + b;
+        // or
+        var anon = (a, b) => { return a + b };
+    </script>
+</body>
+
+</html>

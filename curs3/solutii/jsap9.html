@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>getElementById</title>
+<script type="text/javascript">
+  function salut(id){
+    id.innerHTML='Acesta este un mesaj scris din javascript!';
+  }
+</script>
+</head>
+<body>
+
+<h2>Prima mea pagina</h2>
+
+<p id="myid"></p>
+<!-- <p id="myid2"></p> -->
+//este foarte important sa efectuam navigarea dupa introducerea elementelor HTML, nu înainte de aceasta
+<script>
+var id = document.getElementById("myid");
+salut(id);
+// Ce se intampla daca se apeleaza inca o data functia? salut(id);
+// var id2 = document.getElementById("myid2");
+// salut(id2);
+</script>
+
+</body>
+</html>
