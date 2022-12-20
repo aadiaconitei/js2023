@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function myFunction(a,b,c,d){
+    let nrArg  = arguments.length
+    console.log(nrArg);
+    for(let i =0; i < nrArg; i++){
+        console.log(arguments[i]);
+    }
+    if(arguments[5]=='Ion'){
+        // alert(arguments[5])
+         let nume = 'Adrian';
+       
+    }
+    if( typeof  arguments[6] =="object"){
+        arguments[6].prenume = 'Dan';
+    }
+}
+
+let nume = 'Ion';
+const persoana = {
+    nume: 'Popescu',
+    prenume:'Vasile'
+}
+
+myFunction(1,5,7,8,23, nume, persoana);
+console.log(nume);
+console.log(persoana);
+    </script>
+</body>
+</html>

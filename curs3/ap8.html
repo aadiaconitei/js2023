@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inmultire(a, b){
+            return a * b;
+        }
+        function adunare( n, m = 5){
+            if( typeof n =="number" &&  typeof m =="number"){
+                return n + m;
+            }
+            else{
+                return 0;
+            }
+            
+        }
+        function scadere(n, m){
+            if(n < m){
+                return m - n;
+            }
+            else{
+                return n - m;
+            }
+            
+
+        }
+        function impartire( n, m){
+            if(n < m){
+                return parseInt(m / n);
+            }
+            else{
+                return parseInt(n / m);
+            }
+        }
+        let x = eval(prompt('Primul numar este', 2));
+        let y = eval(prompt('Al 2-lea numar este', 4));
+        
+        let operatie = prompt('Operatia efectuataeste: a- adunare,'+ 
+        's- scadere, im- impartire, in-inmultire');
+        alert(operatie);
+         if(operatie == 'a' ){
+            console.log ('rezultatul adunarii este', adunare(x,y))
+
+         }
+         if(operatie == 's' ){
+            console.log ('rezultatul scaderii este', scadere(x,y))
+
+         }
+
+    </script>
+</body> 
+</html>

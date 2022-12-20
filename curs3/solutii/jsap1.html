@@ -30,9 +30,9 @@
 
         console.log(typeof car);
         console.log(car);
-console.log(car == car2); 
-// false , pentru ca sunt obiecte diferite 
-//stocate in zone de memorie diferite
+        console.log(car == car2); 
+        // false , pentru ca sunt obiecte diferite 
+        //stocate in zone de memorie diferite
 
         console.log(`Eu am o masina ${car.marca} model ${car.model}`)
 
@@ -40,6 +40,7 @@ console.log(car == car2);
         // myCar = 'Opel'; // Error
         car.marca = 'Volvo';
         car.model = 'XC 40';
+        delete car.decapotabil;
         
         console.table(car);
         car.electric = true; //ok
