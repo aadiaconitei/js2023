@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +eval(prompt('Va rugam sa introduceti un numar', 1234));
+        let invers = '', min=9, max =0, suma =0;
+        nrInvers(n);
+
+        function nrInvers(x) {
+            while (x !=0){
+                let ultimaCifra = x % 10; //determinam ultima cifra a lui x
+                 x = Math.floor(x / 10);  //  eliminam ultima cifra (trunchiem numarul)
+                 invers += ultimaCifra;
+                 sumaCifrelor(ultimaCifra);
+                 minMax(ultimaCifra);
+            }
+        }
+        function sumaCifrelor( a ){
+            return suma += a;
+        }
+        function minMax( a){
+            if(min > a){
+                min = a;
+            }
+            if(max < a){
+                max = a;
+            }
+        }
+        document.write(`<p> Inversul numarului ${n} este: `, invers);
+        document.write(`<p> Suma cifrelor numarului ${n} este: `, suma);
+        document.write(`<p> Cifra maxima a numarului ${n} este: `, max);
+        document.write(`<p> Cifra minima a numarului ${n} este: `, min);
+
+    
+    </script>
+    <!-- https://www.golinuxcloud.com/javascript-integer-division/ -->
+</body>
+</html>
