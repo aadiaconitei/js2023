@@ -61,7 +61,8 @@ let products = [
 
 function showProducts(){
     products.forEach(product =>{
-        console.log(product.name);
+      
+        // console.log(product.name);
         let div = document.createElement('div')
                     div.classList.add('product')
                     div.innerHTML = `

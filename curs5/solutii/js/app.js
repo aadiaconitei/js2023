@@ -1,5 +1,5 @@
 
-console.log(movies);
+// console.log(movies);
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 
 const main = document.getElementById("main");
@@ -9,21 +9,24 @@ const search = document.getElementById("search");
 showMovies(movies, searchTerm='');
 function showMovies(results, searchTerm=''){
     if(searchTerm !==''){
-        alert(searchTerm);
+         alert(searchTerm);
         results = results.filter(function (element) {
-            // return element.title == searchTerm;
-            return (element.title.toLowerCase().indexOf(searchTerm) > -1);
+            //  return element.title == searchTerm;
+             return (element.title.toLowerCase().indexOf(searchTerm) > -1);
           });
     }
     results.forEach(element => {
         const el = document.createElement('div');
         const image = document.createElement('img');
         const text = document.createElement('h2');
+        const ln = document.createElement('p');
 
         text.innerHTML = `${element.title}`;
         image.src = IMGPATH + element.poster_path;
+        ln.innerHTML = `${element.original_language}`
         el.appendChild(image);
         el.appendChild(text);
+        el.appendChild(ln);
         main.appendChild(el);
     }); 
 }

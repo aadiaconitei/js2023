@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <script>
+        Memory = "0";
+        Current = "0";
+        Operation = 0;
+        MAXLENGTH = 30;
+
+        function AddDigit(dig) {
+            if (Current.length > MAXLENGTH) {
+                Current = "Too long";
+            }
+            else {
+                if ((eval(Current) == 0) && (Current.indexOf(".") == -1)) {
+                    Current = dig;
+                }
+                else {
+                    Current = Current + dig;
+                };
+            };
+            document.Calculator.Display.value = Current;
+        };
+
+        function Clear() {
+            Current = "0";
+            document.Calculator.Display.value = Current;
+        }
+
+        function AllClear() {
+            Current = "0";
+            Operation = 0;
+            Memory = "0";
+            document.Calculator.Display.value = Current;
+        }
+
+        //FUNCTIONS
+
+        function Plus() {
+            if (Current.indexOf("-") == 0) {
+                Current = Current.substring(1);
+            }
+            else {
+                Current = "-" + Current;
+            };
+        }
+
+        function Operate(op) {
+            if (op.indexOf("+") > -1) { Operation = 1; };
+            if (op.indexOf("-") > -1) { Operation = 2; };
+            if (op.indexOf("*") > -1) { Operation = 3; };
+            if (op.indexOf("/") > -1) { Operation = 4; };
+            if (op.indexOf("^") > -1) { Operation = 5; };
+
+            Memory = Current;
+            Current = "";
+            document.Calculator.Display.value = Current;
+        }
+
+        function Calculate() {
+            if (Operation == 1) { Current = eval(Memory) + eval(Current); };
+            if (Operation == 2) { Current = eval(Memory) - eval(Current); };
+            if (Operation == 3) { Current = eval(Memory) * eval(Current); };
+            if (Operation == 4) { Current = eval(Memory) / eval(Current); };
+            if (Operation == 5) { Current = Math.pow (  eval(Memory) ,  eval(Current)); };
+            Operation = 0;
+            Memory = "0";
+            document.Calculator.Display.value = Current;
+        }
+
+        function Dot() {
+            if (Current.length == 0) {
+                Current = "0.";
+            }
+            else {
+                if (Current.indexOf(".") == -1) {
+                    Current = Current + ".";
+                };
+            };
+            document.Calculator.Display.value = Current;
+        }
+
+    </script>
+    <div class="Calculator">
+        <p>Provocare de facut functionala operatia %</p>
+        <div style="width: 100%;max-width: 400px;margin: auto;"><b><i>Calculator Simplu</i></b></div>
+        <div style="width: 100%;max-width: 400px;margin: auto;">
+            <form name="Calculator">
+                <table border="4">
+                    <tr>
+                        <td colspan="2"><br>
+                            <input type="text" maxlength="40" size="30" name="Display">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><input type="button" value="7" onclick="AddDigit('7')"></td>
+                                    <td><input type="button" value="8" onclick="AddDigit('8')"></td>
+                                    <td><input type="button" value="9" onclick="AddDigit('9')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="6" onclick="AddDigit('6')"></td>
+                                    <td><input type="button" value="5" onclick="AddDigit('5')"></td>
+                                    <td><input type="button" value="4" onclick="AddDigit('4')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="3" onclick="AddDigit('3')"></td>
+                                    <td><input type="button" value="2" onclick="AddDigit('2')"></td>
+                                    <td><input type="button" value="1" onclick="AddDigit('1')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="C" onclick="Clear()"></td>
+                                    <td><input type="button" value="0" onclick="AddDigit('0')"></td>
+                                    <td><input type="button" value="." onclick="Dot()"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><input type="button" value="+" onclick="Operate('+')"></td>
+                                    <td><input type="button" value="-" onclick="Operate('-')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="*" onclick="Operate('*')"></td>
+                                    <td><input type="button" value="/" onclick="Operate('/')"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="^" onclick="Operate('^')"></td>
+                                    <td><input type="button" value="%" onclick=""></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" value="=" onclick="Calculate()"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>13.Sa se progrmaeze un senzor care determina cantitatea de carburant
+        aflata in rezervor.
+        Daca candtitatea de combustibil scade sub 10 litri sa afiseze un mesaj
+        de avertizare cu portocaliu: "Va rog sa alimentati!“.
+        Daca cantitatea de combustibil este< 1 sa afise cu rosu mesajul: "Ati ramas fara combustibil. Trebuie sa ne oprim!“
+       </h2>
+       <script>
+        var combustibil = 55;
+        var viteza = getRandomInt(30, 80);
+        while (combustibil>=0){
+            if(viteza >=60){
+                document.write(" <p style='color:red'>Ati depasit viteza legala 50km/h!</p>");
+            }
+            if(combustibil >=10 && combustibil % 5 ==1){
+                document.write(" <p>Mergi prudent! Vata are prioritate</p>");
+            }
+            else if(combustibil>=2 && combustibil<=10){
+                document.write(" <p style='color:orange'>Va rog sa alimentati!</p>");
+            }
+            else if(combustibil <=1){
+                document.write("<p style='color:red'>Trebuie sa ne oprim!</p>");
+                document.write("<audio autoplay controls><source src='audio/beep.mp3' type='audio/mpeg'></audio>");
+                
+            }
+            combustibil = combustibil -2
+        }
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+        }
+    </script>
+  
+</body>
+</html>

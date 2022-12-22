@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function sah(nrlinii = 8,nrcoloane = 8,alb = 'white',negru = 'black') {
+            document.write("<table border=1 cellspacing=1 cellpadding=0>");
+            for (let l = 1; l <= nrlinii; l++) {
+                document.write("<tr>");
+                for (let c = 1; c <= nrcoloane; c++) {
+                    let culoare = ((l + c) % 2 ? alb : negru);
+                    document.write(`<td bgcolor=${culoare} width=30 height=30></td>`);
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+        sah();
+        sah(4, 4, 'magenta', 'green');
+        sah(15, 15, 'magenta', 'yellow');
+   </script> 
+</body>
+</html>

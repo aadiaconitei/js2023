@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydemo {
+            color: red;
+            border: 2px solid blue;
+            width: 100%;
+            max-width: 32%;
+            /* float: left; */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="demo"></section>
+    <script>
+
+        function drawTags(numeTag, numeClasa, continut, repetari) {
+            for (let i = 0; i < repetari; i++) {
+                createTag(numeTag, continut);
+                newAttribute(numeClasa,numeTag, i)
+            }
+        }
+        function createTag(tname, content) {
+            //generez tagul si cuntinutul sau
+            const newTag = document.createElement(tname, content);
+            newTag.innerHTML = content;
+            // adaug noul tag la sectiune
+            document.getElementById("demo").appendChild(newTag);
+        }
+        function newAttribute(valAttr, newTag, nrTag) {
+            // generez atributul class:
+            const att = document.createAttribute("class");
+            // dam valoare la atributul clasei
+            att.value = valAttr;
+            // Add the class attribute to the first h1:
+            newTag = document.getElementsByTagName(newTag)[nrTag];
+            newTag.setAttributeNode(att);
+        }
+        drawTags('h1', 'mydemo', 'Buna ziua', 5);
+        drawTags('div', 'mydemo', 'Salut', 6);
+    </script>
+
+</body>
+
+</html>
