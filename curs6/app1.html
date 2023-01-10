@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function Student(idStudent, numeStudent, varstaStudent, nota1Student=0, nota2Student=0){
+            this.id = idStudent;
+            this.nume = numeStudent;
+            this.varsta = varstaStudent;
+            this.nota1 = nota1Student;
+            this.nota2 = nota2Student;
+            this.examen = false;
+
+            this.salut = function(){
+                console.log( 'Buna ziua numele meu este ' + this.nume);
+            }
+            this.mergeLaExamen = function(nota){
+                if(this.examen === true && this.nota1 == 0){
+                    this.nota1 = nota;
+                }
+                else if(this.examen === true && this.nota2 == 0){
+                    this.nota2 = nota;
+                }
+                else{
+                    console.log('este abs!');
+                }
+
+            }
+            this.calMedia = function(){
+                return (this.nota1 + this.nota2)/2
+            }
+        }
+
+        const st1 = new Student(1, 'Popescu Marian', 20);
+        const st2 = new Student(2, 'Ionescu Dan', 21);
+
+        console.log(st1);
+        console.log(st2);
+
+        st1.salut();
+        st2.salut();
+        st1.examen = true;
+        st1.mergeLaExamen(10);
+        st1.mergeLaExamen(8);
+        console.log(st1.nota1, st1.nota2);
+        console.log('media este: ',st1.calMedia());
+
+
+    </script>
+</body>
+</html>

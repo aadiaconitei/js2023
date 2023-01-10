@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects loop</title>
+</head>
+
+<body>
+    <script>
+
+        const persoana = {
+            nume: 'Popescu',
+            prenume: 'Dan',
+            telefon: '0788888888',
+            email: 'dan.popescu@demo.com',
+            adresa: ' Strada Viitorului, nr.1, Cluj'
+        }
+        persoana.CNP = 1234;
+        // alert(JSON.stringify(persoana));
+        //  console.log(persoana);
+        // console.log(JSON.stringify(persoana));
+        const persoanaActualizata = {
+            gen: 'masculin',
+            varsta: 23
+        }
+         persoana.__proto__ = persoanaActualizata;
+
+        //  console.log(persoana);
+        // // Metoda 1 for in 
+        // for (const key in persoana) {
+        //     console.log(`${key} : ${persoana[key]}`);
+        // }
+        // // daca dorim sa iteram/ parcurgem doar proprietatile obiectului si nu 
+        // // si cele ale prototipului
+
+        // for (const key in persoana) {
+        //     if (persoana.hasOwnProperty(key)) {
+        //         console.log(`${key} : ${persoana[key]}`);
+        //     }
+        // }
+
+        // Metoda 2 Object.keys
+        // transformam obiectul in "array"
+        let myArr = Object.keys(persoana);
+        console.log(myArr);
+        myArr.forEach((myKey) => {
+            console.log(`proprietate ${myKey}  valoare ${persoana[myKey]}`);
+        });
+
+        // // Metoda 3 Object.values() din ES8
+        let myPerson = Object.values(persoana);
+        myPerson.forEach((myValue) => {
+            console.log(`valoare ${myValue}`);
+        });
+
+        // Metoda 4 Object.entries() din ES8 for of din ES6
+        let newArr = Object.entries(persoana);
+        for ([key, value] of newArr) {
+            console.log(`proprietate ${key}  valoare ${value}`);
+        }
+        
+
+
+    </script>
+
+</body>
+
+</html>

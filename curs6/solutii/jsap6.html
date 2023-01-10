@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metoda 5 de a crea obiecte folosind  Object.create()  bazat pe prototipul altui obiect</h1>
+
+    <script>
+        function  produsNou(nume, pret,stoc,dataFabricarii){
+            this.nume = nume;
+            this.pret = pret;
+            this.stoc = stoc;
+            this.dataFabricari = dataFabricarii;
+            this.afiseaza=function(){
+                console.log(`Produsul ${this.nume} costa ${this.pret}`)
+            },
+            this.cumpara= function(){
+                if(this.stoc>0){
+                    this.stoc -= 1;
+                    console.log(`Produsul ${this.nume} a fost adaugat in cos`)
+                }
+            }
+        }
+        const paine =  new produsNou('Paine', 8, 36,'2020-02-22');
+        paine.afiseaza();
+        paine.cumpara();
+        console.log(paine.nume);
+        console.log(paine['nume']);
+        paine.nume='Paine cu maia'; 
+        console.log(paine['nume']);
+        // facem un obiect 
+        // const paineNeagra = Object.assign(paine);
+        // console.log(paineNeagra);
+
+        // Prototype
+        const paineCuSeminte = Object.create(paine);
+        console.log(paineCuSeminte);
+        console.log(paineCuSeminte.__proto__.nume);
+        // paineCuSeminte.nume='Paine cu seminte';
+        // paineCuSeminte.cumpara();
+        // //  Atentie obiectul prototip poate modifica obiectul initial .
+        // paineCuSeminte.__proto__.nume='demo';
+        // //  Pentru constructor putem seta cu prototype
+        // produsNou.prototype.stoc =10;
+       
+        
+    </script>
+</body>
+</html>

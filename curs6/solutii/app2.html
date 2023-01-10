@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<style>
+	body {
+	  padding: 40px;
+	  background-color: rgba(0, 0, 0, 0.6);
+	}
+
+	.btn {
+	  width: 25px;
+	  height: 25px;
+	  display: inline-block;
+	  cursor: pointer;
+	  margin: 0;
+	  padding: 0;
+	  border: 1px solid white;
+	}
+	</style>
+	<script>
+		var setCookie = function (n, val) {
+			var exdays = 30;
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires=" + d.toGMTString();
+			document.cookie = n + "=" + val + "; " + expires;
+		};
+
+		var getCookie = function (n) {
+			var name = n + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1);
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+    		return "";
+		};
+
+document.onclick = function (e) {
+    if (e.target.className == 'btn') {
+        var favColor = e.target.style.backgroundColor;
+        setCookie('color', favColor);
+		alert(favColor);
+        document.body.style.backgroundColor = favColor;
+        console.log(favColor);
+    }
+};
+
+window.onload = function () {
+    var favColor = document.body.style.backgroundColor;
+    var color = getCookie('color');
+    if (color === '') {
+        document.body.style.backgroundColor = favColor;
+    } else {
+      document.body.style.backgroundColor = color;
+    }
+	alert(color);
+};
+	
+	</script>
+</head>
+
+<body>
+	<h2>Aplicatia javaScript</h2>
+	<div id="colors">
+		<span class="btn" style="background-color: red;"></span>
+		<span class="btn" style="background-color: gray;"></span>
+		<span class="btn" style="background-color: greenyellow;"></span>
+		<span class="btn" style="background-color: blue;"></span>
+		<span class="btn" style="background-color: green"></span>
+		<span class="btn" style="background-color: palevioletred"></span>
+		<span class="btn" style="background-color: white"></span>
+		<span class="btn" style="background-color: black"></span>
+		<span class="btn" style="background-color: aqua;"></span>
+	</div>
+</body>
+</html>

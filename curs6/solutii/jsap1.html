@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metoda 1 de a crea obiecte folosind Object literals</h1>
+
+    <script>
+        let produs={
+            nume: 'Paine',
+            pret: 8,
+            stoc: 25,
+            dataFabricarii:new Date(2022,02,22),
+            afiseaza: function(){
+                console.log(`Produsul ${produs.nume} costa ${produs.pret}`)
+                console.log(`Produsul ${this.nume} costa ${this.pret}`)
+            },
+            cumpara: function(){
+                // incapsulare: fac verificare si apoi modific
+                // modific controlat o proprietate
+                if(this.stoc>0){
+                    this.stoc -= 1;
+                    console.log(`Produsul ${this.nume} a fost adaugat in cos`)
+                }
+            }
+
+        }
+        produs.afiseaza();
+        produs.cumpara();
+        console.log(produs.nume);
+        console.log(produs['nume']);
+        produs.nume='Apa'; // Atentie produsul si-a modificat numele fara verificare.
+        console.log(produs['nume']);
+
+    </script>
+</body>
+</html>

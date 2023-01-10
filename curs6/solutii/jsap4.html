@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Metoda 4 de a crea obiecte folosind  Object.assign()  clonand alt obiect </h1>
+
+    <script>
+        function  produsNou(nume, pret,stoc,dataFabricarii){
+            this.nume = nume;
+            this.pret = pret;
+            this.stoc = stoc;
+            this.dataFabricari = dataFabricarii;
+            this.afiseaza=function(){
+                console.log(`Produsul ${this.nume} costa ${this.pret}`)
+            },
+            this.cumpara= function(){
+                if(this.stoc>0){
+                    this.stoc -= 1;
+                    console.log(`Produsul ${this.nume} a fost adaugat in cos`)
+                }
+            }
+        }
+        const paine =  new produsNou('Paine', 8, 36,'2020-02-22');
+        // paine.afiseaza();
+        // paine.cumpara();
+        // console.log(paine.nume);
+        // console.log(paine['nume']);
+        // paine.nume='Paine cu maia'; 
+        // console.log(paine['nume']);
+        // clonam un obiect 
+        const paineNeagra = Object.assign(paine);
+        console.log(paineNeagra);
+        paineNeagra.gramaj =1000;
+        paineNeagra.nume = 'Paine neagra';
+        console.log(paineNeagra);
+
+        // Atentie clonare vs copiere
+        const paineAlba = paine;
+        console.log(paineAlba);
+        paineAlba.nume='Paine Alba';
+        console.log('produsul paine alba',paineAlba);
+        console.log('produsul paine cu maia',paine);
+        
+    </script>
+</body>
+</html>

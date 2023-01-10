@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: monospace;
+    font-size: 1.2em;
+}
+#drawing {
+    position: relative;
+    background-color: #ddd;
+    height: 20em;
+    width: 20em;
+}
+#drawing div {
+    background-color: black;
+    position: absolute;
+}
+#base {
+    width: 16em;
+    height: 0.5em;
+    bottom: 0;
+    left: 2em;
+}
+#pillar {
+    width: 0.5em;
+    height: 20em;
+    top: 0;
+    left: 8em;
+}
+#suport {
+    width: 6em;
+    height: 0.5em;
+    top: 0;
+    left: 8em;
+}
+#rope {
+    width: 0.2em;
+    height: 6em;
+    top: 0;
+    left: 14em;
+}
+#head {
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    top: 6em;
+    left: 12.5em;
+}
+#body {
+    width: 1em;
+    height: 3em;
+    top: 8.9em;
+    left: 13.5em;
+}
+#left_arm {
+    transform: rotate(30deg);
+    width: 0.5em;
+    height: 2em;
+    top: 8.9em;
+    left: 13em;
+}
+#right_arm {
+    transform: rotate(-30deg);
+    width: 0.5em;
+    height: 2em;
+    top: 8.9em;
+    left: 14.5em;
+}
+#left_leg {
+    transform: rotate(30deg);
+    width: 0.5em;
+    height: 2.5em;
+    top: 11.5em;
+    left: 13em;
+}
+#right_leg {
+    transform: rotate(-30deg);
+    width: 0.5em;
+    height: 2.5em;
+    top: 11.5em;
+    left: 14.5em;
+}
+.human {
+    visibility: hidden;
+}
+#letters {
+    font-size: 2em;
+}
+#word{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}

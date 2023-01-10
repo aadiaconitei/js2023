@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>
+        Folosind una din cele 5 metode prezentate creat 2 obiecte de tip Student, cu structură ( membrii obiectului):
+        Prorpietați: id, nume, varsta, nota1, nota2, media;
+        Metode: salut(), examen(), calMedia();
+
+    </h2>
+
+    <script>
+        function Student(id, nume, varsta) {
+            this.id = id;
+            this.nume = nume;
+            this.varsta = varsta;
+
+
+            this.salut = function () {
+                console.log(`Buna ziua, numele meu este: ${this.nume} si am ${this.varsta} ani.`)
+            }
+            this.examen = function (nota1, nota2) {
+                this.nota1 = parseInt(nota1);
+                this.nota2 = parseInt(nota2);
+                console.log(`Azi am terminat toate examenele la JavaScript.`);
+            }
+            this.calMedia = function () {
+                if (this.nota1 > 1 && this.nota2 > 1) {
+                    this.media = (this.nota1 + this.nota2) / 2;
+                }
+                else {
+                    console.error(`Nu sunt suficiente note!`);
+                }
+
+            }
+
+        }
+        const student1 = new Student(1, 'Popescu Ion', 19);
+        const student2 = new Student(2, 'Ionescu Dan', 40);
+        student1.examen(7, 9);
+        student1.calMedia();
+
+        // Optimizare Refactoring code
+        // Metodele comune pentru toate obiectele le definim in prototip
+        // metode statice
+        function StudentNou(id, nume, varsta) {
+            this.id = id;
+            this.nume = nume;
+            this.varsta = varsta;
+
+        }
+        StudentNou.prototype.salut = function () {
+            console.log(`Buna ziua, numele meu este: ${this.nume} si am ${this.varsta} ani.`)
+        }
+        StudentNou.prototype.examen = function (nota1, nota2) {
+            this.nota1 = parseInt(nota1);
+            this.nota2 = parseInt(nota2);
+            console.log(`Azi am terminat toate examenele la JavaScript.`);
+        }
+        StudentNou.prototype.calMedia = function () {
+            if (this.nota1 > 1 && this.nota2 > 1) {
+                this.media = (this.nota1 + this.nota2) / 2;
+            }
+            else {
+                console.error(`Nu sunt suficiente note!`);
+            }
+
+        }
+        const student3 = new StudentNou(3, 'Vasilescu Maria', 19);
+        const student4 = new StudentNou(4, 'Dumitrescu Ana', 32);
+        console.log(student1);
+        console.log(student3);
+        student4.examen(7, 9);
+        student4.calMedia();
+    </script>
+</body>
+
+</html>
