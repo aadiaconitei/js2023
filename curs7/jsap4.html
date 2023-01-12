@@ -9,24 +9,24 @@
 <body>
     <script>
         const myArr = [2, 6, 12, 32, 7, 15, 43, 18, 5];
-
         function interschimbare(newArr, index1, index2){
-            
-
+            let aux = newArr[index1];
+            newArr[index1] = newArr[index2];
+            newArr[index2] = aux;
         }
         function mySort(arr){
             var i, j;
             for( i = 0; i < arr.length;i++){
                 for(j =0; j < (arr.length - 1); j++ ){
-                    console.log(arr[j], arr[j+1]);
+                    // console.log(arr[j], arr[j+1]);
                     if(arr[j] > arr[j+1]){
-                        interschimbare(arr,  )
+                        interschimbare(arr, j , j+1 )
                     }
                 }
             }
-
+            return arr;
         }
-        mySort(myArr);
+       console.log(mySort(myArr));
     </script>
 </body>
 </html>

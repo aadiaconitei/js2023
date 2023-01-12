@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. array.push();
+        var fruit = ['apple', 'orange', 'grapes'];
+        var fruitnew = fruit.push('watermelon','kiwi');
+        console.log(fruit); // ['apple', 'orange', 'grapes','watermelon','kiwi']
+        console.log(fruitnew); // 5
+
+
+        fruit.pop();
+        console.log(fruit);
+        
+
+        fruit.unshift('Ananas','Para');
+        console.log(fruit); 
+        fruit.shift();
+        console.log(fruit); 
+
+        fruit.forEach(afiseaza);
+
+        function afiseaza(item){
+            console.log(item);
+        }
+
+        let myArr = fruit.map(item=>item.toUpperCase());
+        console.log(myArr);
+    </script>
+</body>
+
+</html>
