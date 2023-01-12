@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Algoritm de sortare</h1>
+    <p>Metoda: Bubble Sort - interschimbare</p>
+    <p>Sortarea prin metoda bulelor se consideră drept una din cele mai puţin eficiente metode de sortare, dar cu un
+        algoritm mai simplu. Ideea de bază a sortării prin metoda bulelor este în a parcurge tabloul, de la stânga spre
+        dreapta,
+        fiind comparate elementele alăturate a[i] si a[i+1]. Dacă vor fi găsite 2 elemente neordonate, valorile lor vor
+        fi interschimbate. Parcurgerea tabloului de la stânga spre dreapta se va repeta atât timp cât vor fi întâlnite
+        elemente neordonate.
+    </p>
+
+    <script>
+        function interschimbare(arr, firstIndex, secondIndex) {
+            var aux = arr[firstIndex];
+            arr[firstIndex] = arr[secondIndex];
+            arr[secondIndex] = aux;
+        }
+        function bubbleSortAlgo(arraaytest) {
+            var len = arraaytest.length;
+            var i, j;
+            for (i = 0; i < len; i++) {
+                for (j = 0; j < (len - i); j++) {
+                    if (arraaytest[j] > arraaytest[j + 1]) {
+                        interschimbare(arraaytest, j, j + 1);
+                    }
+                }
+            } return arraaytest;
+        }
+        const myArr = [7, 12, 3, 15, 2, 16, 6, 1];//[3, 6, 2, 5, -75, 4, 1]
+        console.log(bubbleSortAlgo(myArr));
+    </script>
+
+    <p>Metoda 2: Quick sort - partiţionare</p>
+    <p>Quick Sort este unul dintre cei mai rapizi şi mai utilizaţi algoritmi de sortare până în acest moment,bazându-se
+        pe tehnica „Divide et impera“.Deşi cazul cel mai nefavorabil este O(N^2), în practică, QuickSort oferă rezultate
+        mai bune decât restul algoritmilor de sortare din clasa „O(N log N)“.
+
+        Algoritmul se bazează pe următorii paşi:
+
+        alegerea unui element pe post de pivot
+        parcurgerea vectorului din două părţi(de la stânga la pivot, de la dreapta la pivot, ambele în acelaşi timp)
+        interschimbarea elementelor care se află pe „partea greşită“ a pivotului(mutăm la dreapta pivotului elementele
+        mai mari, la stânga pivotului elementel mai mici)
+        divizarea algoritmului: după ce mutăm elementele pe „partea corectă“ a pivotului, avem 2 subşiruri de sortat,
+        iar pivotul se află pe poziţia bună.
+    </p>
+
+    <script>
+        function quickSortAlgo(origArray) {
+            if (origArray.length <= 1) {
+                return origArray;
+            } else {
+                var left = [];
+                var right = [];
+                var newArray = [];
+                var pivot = origArray.pop();//pivot este ultimul element si stergem ultimul element
+                var length = origArray.length;
+                for (var i = 0; i < length; i++) {
+                    if (origArray[i] <= pivot) {
+                        left.push(origArray[i]);
+                    } else {
+                        right.push(origArray[i]);
+                    }
+                }
+                return newArray.concat(quickSortAlgo(left), pivot, quickSortAlgo(right));
+            }
+        }
+        var myArray = [7, 12, 3, 15, 2, 16, 6, 1];//[13, 50, 2, 45, -1, 74, 11];
+        var arreySorted = quickSortAlgo(myArray);
+        console.log(arreySorted);
+    </script>
+</body>
+
+</html>

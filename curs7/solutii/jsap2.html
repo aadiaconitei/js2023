@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Oparatii cu array</h1>
+    <p>Array-uri - cum adăugăm la sfârșit</p>
+    <script>
+        const ourNames = ['Paul', 'Ion', 'Dan', 'Adi'];
+        ourNames.push('Mihai', 'Ana');
+        console.log(ourNames);
+    </script>
+    <p>Array-uri - cum adăugăm la început</p>
+    <script>
+        ourNames.unshift('Tudor', 'Maria');
+        console.log(ourNames);
+    </script>
+    <p>Array-uri - cum stergem un element de la sfârșit</p>
+    <script>
+        // Putem lua și valoarea ultimului element
+        var name = ourNames.pop();
+        console.log(ourNames);
+        console.log(name);
+    </script>
+    <p>Array-uri - cum stergem un element de la început</p>
+    <script>
+        var myName = ourNames.shift();
+        console.log(ourNames);
+        console.log(myName);
+    </script>
+    <p>Array-uri - cum extragem o parte din array</p>
+    <script>
+        // slice extrage o parte dintr-un array
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(1, 3);
+        console.log(citrus);
+    </script>
+    <p>Array-uri - cum unim / concatenam 2 array-uri</p>
+    <script>
+        var myGirls = ["Ana", "Maria"];
+        var myBoys = ["Emil", "Dan", "Ion"];
+        var myChildren = myGirls.concat(myBoys);
+        console.log(myChildren);
+
+        console.log(myChildren.sort());
+        console.log(myChildren.reverse());
+    </script>
+</body>
+
+</html>

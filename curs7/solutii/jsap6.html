@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .text-warning {
+            color: #fb8500;
+        }
+
+        .text-danger {
+            color: #d90429;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formular</h1>
+    <form action="">
+        <div>
+            <label for="nume">Nume</label>
+            <input type="text" name="nume" id="nume" autofocus onblur="capitalizeString(this);">
+        </div>
+        <div>
+            <label for="prenume">Prenume</label>
+            <input type="text" name="prenume" id="prenume">
+        </div>
+        <div>
+            <label for="parola">Parola</label>
+            <input type="password" name="parola" id="parola">
+        </div>
+        <div>
+            <label>
+                Alege un curs:
+                <select class='curs' name="curs">
+                    <option value="">Select …</option>
+                    <option value="HTML">HTML</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Design">Design</option>
+                </select>
+            </label>
+            <div class="result"></div>
+        </div>
+        <div>
+            <label for="mesaj">Mesaj</label>
+            <textarea name="mesaj" id="mesaj" cols="30" rows="10" onchange="countLetters()"></textarea>
+            <span id="typed-characters">0</span>
+        </div>
+    </form>
+
+    <script>
+        // Metoda 1
+        function capitalizeString(e) {
+            let str2 = e.value.charAt(0).toUpperCase() + e.value.slice(1);
+            alert(str2);
+            e.value = str2;
+        }
+
+
+        // Metoda 2
+
+        const prenume = document.getElementById("prenume");
+        prenume.addEventListener('blur', function (e) {
+            const target = e.target;
+            let str2 = target.value.charAt(0).toUpperCase() + target.value.slice(1);
+            alert(str2);
+            prenume.value = str2;
+        });
+
+        const password = document.querySelector('input[type="password"]');
+
+        password.addEventListener('focus', (event) => {
+            event.target.style.background = 'pink';
+            event.target.style.caretColor = 'blue'; //input cursor color
+        });
+
+        password.addEventListener('blur', (event) => {
+            event.target.style.background = '';
+        });
+
+        const selectElement = document.querySelector('.curs');
+
+        selectElement.addEventListener('change', (event) => {
+            const result = document.querySelector('.result');
+            result.textContent = `Ai ales cursul ${event.target.value}`;
+        });
+
+        const textAreaElement = document.querySelector("#mesaj");
+        const typedCharactersElement = document.querySelector("#typed-characters");
+        
+        const maximumCharacters = 300;
+
+        textAreaElement.addEventListener("keydown", (event) => {
+
+            const typedCharacters = textAreaElement.value.length;
+
+            if (typedCharacters > maximumCharacters) {
+                return false;
+            }
+            /**
+             * Display the number of characters typed.
+             */
+            typedCharactersElement.textContent = typedCharacters;
+
+            if (typedCharacters >= 200 && typedCharacters < 250) {
+                typedCharactersElement.classList = "text-warning";
+            } else if (typedCharacters >= 250) {
+                typedCharactersElement.classList = "text-danger";
+            }
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="sursa">
+        Un număr din România când te afli în Roaming formează numărul în format internaţional : adaugă prefixul României +4 sau 004 înaintea numărului +4 0711111111 sau 004 0722 222222.
+un număr din ţara pe care o vizitezi, când te afli in Roaming, formează numărul în formatul naţional al ţării respective ( nu este nevoie să adaugi şi prefixul ţării respective)
+
+de către o persoană din România, cel care te apelează formează numărul în format naţional ( 0733 333333 )
+de către un număr din altă ţară (inclusiv cea pe care o vizitezi), cel care te apelează formează numărul tau în format internaţional. +4 0744 44444444 sau 0040755 555555 sau si mai
+simplu  0766666666     0777 777 777
+    </p>
+    <p id="destinatie"></p>
+    <script>
+        let sursa =  document.getElementById('sursa').innerHTML;
+        console.log(sursa);
+        let pattern = /[\+]?[0-9-\s]{10,16}/ig;
+        let result = sursa.match(pattern);
+        document.getElementById("destinatie").innerHTML = result;
+        
+        let result2 = sursa.matchAll(pattern);
+        console.log(Array.from(result2));
+        
+    </script>
+</body>
+</html>

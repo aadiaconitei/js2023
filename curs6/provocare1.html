@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="filme">
+
+    </div>
+
+    <script src="./provocari/data.js"></script>
+    <script>
+        console.log(data);
+        function showMovies() {
+            data.forEach(product => {
+
+                // console.log(product.name);
+                let div = document.createElement('div')
+                //div.classList.add('product')
+                div.innerHTML = `<h2 class="name">${product.title}</h2>
+                <p>${product.genre} </p>`;
+                product.tags.forEach(key=>{
+                    div.innerHTML += `${key} `;
+                })
+                document.getElementById('filme').append(div)
+            })
+        }
+
+        showMovies();
+
+    </script>
+</body>
+
+</html>

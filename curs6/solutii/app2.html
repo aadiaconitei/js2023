@@ -45,7 +45,7 @@ document.onclick = function (e) {
     if (e.target.className == 'btn') {
         var favColor = e.target.style.backgroundColor;
         setCookie('color', favColor);
-		alert(favColor);
+		//alert(favColor);
         document.body.style.backgroundColor = favColor;
         console.log(favColor);
     }
@@ -59,7 +59,7 @@ window.onload = function () {
     } else {
       document.body.style.backgroundColor = color;
     }
-	alert(color);
+	//alert(color);
 };
 	
 	</script>

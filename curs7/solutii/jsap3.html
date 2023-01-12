@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Demo Array</title>
+    <script>
+        // 1. array.push();
+        var fruit = ['apple', 'orange', 'grapes'];
+        var fruitnew = fruit.push('watermelon');
+        console.log(fruit); // ['apple', 'orange', 'grapes','watermelon']
+        console.log(fruitnew); // 4
+
+        // 2. array.indexOf();
+        // var fruit = ['apple', 'orange', 'watermelon', 'grapes'];
+        // console.log(fruit.indexOf('orange')); //  1
+        // console.log(fruit.indexOf('grapes')); // 3
+
+        // 3. array.slice();
+        // var fruit = ['apple', 'orange', 'watermelon', 'grapes'];
+        // console.log(fruit.slice(2, 1)); // watermelon
+
+        // // 4. array.toString();
+        // var fruit = ['apple', 'orange', 'watermelon', 'grapes'];
+        // console.log(fruit.toString()); // apple,orange,watermelon,grapes
+
+        // 5. array.forEach();
+        // nu returneaza nimic
+        // var fruit = ['apple', 'orange', 'watermelon', 'grapes'];
+        // function fruitsArray(element, index, array) {
+        //     console.log('fruit[' + index + '] = ' + element);
+        // }
+        // fruit.forEach(fruitsArray);
+        // // fruit[0] = apple
+        // // fruit[1] = orange
+        // // fruit[2] = watermelon
+        // // fruit[3] = grape
+
+        // // 6. includes();
+        // const arr = [1, 2, 3, 4, 5, 6];
+
+        // arr.includes(2); // output: true
+        // arr.includes(7); // output: false
+
+
+        // // 7. filter();
+        // const arr = [10, 20, 30, 40, 50, 60];
+        // // valori mai mari de 40
+        // const filtered = arr.filter(num => num > 40);
+        // console.log(filtered); // New output: [50, 60]
+        // console.log(arr); // previous output: [10, 20, 30, 40, 50, 60]
+
+
+        // // 8. map();
+        // retuneaza un nou array
+        // const arr = [1, 2, 3, 4, 5, 6];
+
+        // // add one to every element
+        // const oneAdded = arr.map(num => num + 1);
+        // console.log(oneAdded); // output [2, 3, 4, 5, 6, 7]
+
+        // console.log(arr); // output: [1, 2, 3, 4, 5, 6]
+
+        // // 9.reduce();
+        // const arr = [1, 2, 3, 4, 5, 6];
+        // // suma elementelor
+        // const sumTotal = arr.reduce((total, value) => total + value, 0);
+        // console.log(sumTotal); // 21
+
+        // // 10. some();
+        // const arr = [10, 20, 30, 40, 50, 60];
+
+        // // verifica daca cel putin un element este mai mare de 40?
+        // const largeNum = arr.some(num => num > 40);
+        // console.log(largeNum); // output: true
+
+        // // verifica daca cel putin un element este maim mic sau egal cu 9
+        // const smallNum = arr.some(num => num <= 9);
+        // console.log(smallNum); // output: false
+
+    </script>
+</head>
+
+<body>
+    <p>10 functii javascript utile </p>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = new Array(3);
+        arr[0]=1;
+        arr[1]=5;
+        arr[2]= 7;
+        arr[3]= 10;
+        arr[4]= 11;
+        arr['nume'] = 'Ion';
+
+        const arrNumeric = [1, 2, 11 ,5, 8, 10,];
+
+        let myArr = arrNumeric.concat(arr);
+        // myArr = arrNumeric + arr;
+        console.log(myArr);
+        // console.log(arrNumeric.reverse());
+         console.log(arrNumeric.sort(function (a, b) {  return b - a;  }));
+        
+    </script>
+</body>
+</html>
